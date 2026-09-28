@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "prompt-diff"
+version = "0.1.0"
+description = "Word-level diffs for prompt versions, plus A/B evals against labeled cases."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [
+    { name = "Himanshu Singh", email = "singh.himanshu0495@gmail.com" },
+]
+keywords = ["prompts", "diff", "eval", "llm", "prompt-engineering"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.scripts]
+prompt-diff = "prompt_diff.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/HimanshuSingh0495/prompt-diff"
+Repository = "https://github.com/HimanshuSingh0495/prompt-diff"
+
+[tool.setuptools.packages.find]
+include = ["prompt_diff*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
